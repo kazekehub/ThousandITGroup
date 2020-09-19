@@ -3,27 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7C4593522514632A00200867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4593512514632A00200867 /* AppDelegate.swift */; };
 		7C4593542514632A00200867 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4593532514632A00200867 /* SceneDelegate.swift */; };
-		7C4593562514632A00200867 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4593552514632A00200867 /* ViewController.swift */; };
 		7C4593592514632A00200867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4593572514632A00200867 /* Main.storyboard */; };
 		7C45935B2514632F00200867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C45935A2514632F00200867 /* Assets.xcassets */; };
 		7C45935E2514632F00200867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C45935C2514632F00200867 /* LaunchScreen.storyboard */; };
+		7C4593692514681F00200867 /* MainNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4593682514681F00200867 /* MainNewsTableViewController.swift */; };
+		7C45936B251481DA00200867 /* NewsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45936A251481DA00200867 /* NewsProvider.swift */; };
+		7C45936D2514A3B700200867 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45936C2514A3B700200867 /* Movies.swift */; };
+		7C45936F2514B63000200867 /* MoviesCached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45936E2514B63000200867 /* MoviesCached.swift */; };
+		7CE4E484251607E300B32938 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE4E483251607E300B32938 /* Alamofire */; };
+		7CE4E4862516100C00B32938 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE4E4852516100C00B32938 /* MovieTableViewCell.swift */; };
+		7CE4E48925161EAD00B32938 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE4E48825161EAD00B32938 /* SDWebImage */; };
+		7CE4E48B25162BCB00B32938 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE4E48A25162BCA00B32938 /* MovieDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7C45934E2514632A00200867 /* Movie news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie news.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4593512514632A00200867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C4593532514632A00200867 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7C4593552514632A00200867 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C4593582514632A00200867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C45935A2514632F00200867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C45935D2514632F00200867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C45935F2514632F00200867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C4593682514681F00200867 /* MainNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNewsTableViewController.swift; sourceTree = "<group>"; };
+		7C45936A251481DA00200867 /* NewsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
+		7C45936C2514A3B700200867 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		7C45936E2514B63000200867 /* MoviesCached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCached.swift; sourceTree = "<group>"; };
+		7CE4E4852516100C00B32938 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		7CE4E48A25162BCA00B32938 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE4E48925161EAD00B32938 /* SDWebImage in Frameworks */,
+				7CE4E484251607E300B32938 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +70,44 @@
 		7C4593502514632A00200867 /* Movie news */ = {
 			isa = PBXGroup;
 			children = (
+				7C459365251463B800200867 /* Model */,
+				7C459366251463D700200867 /* View */,
+				7C459367251463E600200867 /* Controller */,
 				7C4593512514632A00200867 /* AppDelegate.swift */,
 				7C4593532514632A00200867 /* SceneDelegate.swift */,
-				7C4593552514632A00200867 /* ViewController.swift */,
-				7C4593572514632A00200867 /* Main.storyboard */,
 				7C45935A2514632F00200867 /* Assets.xcassets */,
-				7C45935C2514632F00200867 /* LaunchScreen.storyboard */,
 				7C45935F2514632F00200867 /* Info.plist */,
 			);
 			path = "Movie news";
+			sourceTree = "<group>";
+		};
+		7C459365251463B800200867 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C45936C2514A3B700200867 /* Movies.swift */,
+				7C45936E2514B63000200867 /* MoviesCached.swift */,
+				7C45936A251481DA00200867 /* NewsProvider.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C459366251463D700200867 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C4593572514632A00200867 /* Main.storyboard */,
+				7C45935C2514632F00200867 /* LaunchScreen.storyboard */,
+				7CE4E4852516100C00B32938 /* MovieTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7C459367251463E600200867 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C4593682514681F00200867 /* MainNewsTableViewController.swift */,
+				7CE4E48A25162BCA00B32938 /* MovieDetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +126,10 @@
 			dependencies = (
 			);
 			name = "Movie news";
+			packageProductDependencies = (
+				7CE4E483251607E300B32938 /* Alamofire */,
+				7CE4E48825161EAD00B32938 /* SDWebImage */,
+			);
 			productName = "Movie news";
 			productReference = 7C45934E2514632A00200867 /* Movie news.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +158,10 @@
 				Base,
 			);
 			mainGroup = 7C4593452514632A00200867;
+			packageReferences = (
+				7CE4E482251607E300B32938 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7CE4E48725161EAD00B32938 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 7C45934F2514632A00200867 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +189,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C4593562514632A00200867 /* ViewController.swift in Sources */,
+				7C45936B251481DA00200867 /* NewsProvider.swift in Sources */,
+				7C45936D2514A3B700200867 /* Movies.swift in Sources */,
+				7C45936F2514B63000200867 /* MoviesCached.swift in Sources */,
 				7C4593522514632A00200867 /* AppDelegate.swift in Sources */,
+				7CE4E48B25162BCB00B32938 /* MovieDetailViewController.swift in Sources */,
 				7C4593542514632A00200867 /* SceneDelegate.swift in Sources */,
+				7CE4E4862516100C00B32938 /* MovieTableViewCell.swift in Sources */,
+				7C4593692514681F00200867 /* MainNewsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +394,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7CE4E482251607E300B32938 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+		7CE4E48725161EAD00B32938 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7CE4E483251607E300B32938 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CE4E482251607E300B32938 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7CE4E48825161EAD00B32938 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CE4E48725161EAD00B32938 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C4593462514632A00200867 /* Project object */;
 }
