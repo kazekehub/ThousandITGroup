@@ -47,8 +47,7 @@ class MainNewsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return movieData.count
     }
-
-   
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moviesCellId", for: indexPath) as! MovieTableViewCell
         let movie = movieData[indexPath.row]
@@ -58,8 +57,21 @@ class MainNewsTableViewController: UITableViewController {
         cell.rateLabel.text = "\(movie.voteAverage ?? 0.0)"
         cell.movieImage?.sd_setImage(with: imageURL, placeholderImage: #imageLiteral(resourceName: "interface"))
         
-        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == movieData.count - 1 {
+            moreData()
+        }
+        
+    }
+    
+    func moreData() {
+        for _ in 0...1{
+            movieData.append(movieData.randomElement()!)
+        }
+        tableView.reloadData()
     }
     
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
