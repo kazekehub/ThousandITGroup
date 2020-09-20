@@ -42,6 +42,7 @@
 		7C45936A251481DA00200867 /* NewsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
 		7C45936C2514A3B700200867 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		7C45936E2514B63000200867 /* MoviesCached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCached.swift; sourceTree = "<group>"; };
+		7C6847E22517B1B000D99084 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7CE4E4852516100C00B32938 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		7CE4E48A25162BCA00B32938 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		7CE4E48C2517653D00B32938 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		7C4593452514632A00200867 = {
 			isa = PBXGroup;
 			children = (
+				7C6847E22517B1B000D99084 /* README.md */,
 				7C4593502514632A00200867 /* Movie news */,
 				7C45934F2514632A00200867 /* Products */,
 				6F704462F4370B72D1A284C1 /* Pods */,
