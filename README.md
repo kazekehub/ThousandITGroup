@@ -15,9 +15,9 @@ Functional for implementation:<p>
 ● When swiping down (swipe), the data should be updated.<p>
 
 <p align="left">
-<img src="https://github.com/kazekehub/ThousandITGroup/blob/master/Screenshots/Movie%20News%201.png" width="250">
-<img src="https://github.com/kazekehub/ThousandITGroup/blob/master/Screenshots/Movie%20News%202.png" width="250">
-<img src="https://github.com/kazekehub/ThousandITGroup/blob/master/Screenshots/Movie%20News%203.png" width="250"> <p>
+<img src="https://github.com/kazekehub/ThousandITGroup/blob/master/Screenshoots/Movie%20News%201.png" width="250">
+<img src="https://github.com/kazekehub/ThousandITGroup/blob/master/Screenshoots/Movie%20News%202.png" width="250">
+<img src="https://github.com/kazekehub/ThousandITGroup/blob/master/Screenshoots/Movie%20News%203.png" width="250"> <p>
 </p>
 
 Overview
