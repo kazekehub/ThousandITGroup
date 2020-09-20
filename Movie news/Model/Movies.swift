@@ -60,4 +60,16 @@ struct Films: Decodable {
         self.overview = try? container.decode(String.self, forKey: .overview)
         self.releaseDate = try? container.decode(String.self, forKey: .releaseDate)
     }
+    
+    init(moviesCached:MoviesCached){
+        voteCount = moviesCached.voteCount
+        posterPath = moviesCached.posterPath
+        id = moviesCached.id
+        backdropPath = moviesCached.backdropPath
+        originalLanguage = moviesCached.originalLanguage
+        title = moviesCached.title
+        voteAverage = moviesCached.voteAverage
+        overview = moviesCached.overview
+        releaseDate = moviesCached.releaseDate
+    }
 }

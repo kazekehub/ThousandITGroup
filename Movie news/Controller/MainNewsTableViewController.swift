@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import RealmSwift
 
 protocol MovieNewsProtocol {
     var delegate: MovieNewsDelegate? {get set}
@@ -16,18 +17,28 @@ protocol MovieNewsProtocol {
 
 class MainNewsTableViewController: UITableViewController {
     
-//    var moviesSavedToRealm = MoviesSavedToRealm()
-    
-    
+    var realmHelper = RealmHelper()
     var provider: MovieNewsProtocol?
     var movieData: [Films] = []
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
-        provider = NewsProvider(delegate: self)
-        provider?.requestMovie()
+        if defaults.bool(forKey: "First Launch") == true {
+            if let movies = self.realmHelper.readMovie(){
+                self.movieData = movies
+            } else {
+                provider?.requestMovie()
+            }
+            defaults.set(true,forKey: "First Laucnh")
+        } else {
+            provider = NewsProvider(delegate: self)
+            provider?.requestMovie()
+            defaults.set(true,forKey: "First Laucnh")
+        }
+//        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.addSubview(self.refreshControl!) // not required when using UITableViewCo
@@ -64,7 +75,6 @@ class MainNewsTableViewController: UITableViewController {
         if indexPath.row == movieData.count - 1 {
             moreData()
         }
-        
     }
     
     func moreData() {
@@ -73,11 +83,6 @@ class MainNewsTableViewController: UITableViewController {
         }
         tableView.reloadData()
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "goToDetail", sender: self)
-//
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goToDetail") {
@@ -93,6 +98,7 @@ class MainNewsTableViewController: UITableViewController {
 extension MainNewsTableViewController: MovieNewsDelegate {
     func provideMovie(movies: Movies) {
         movieData = movies.results
+        self.realmHelper.saveAndUpdateMovie(movies: movies.results)
         DispatchQueue.main.async {
             self.refreshControl!.endRefreshing()
             self.tableView.reloadData()
