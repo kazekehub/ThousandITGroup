@@ -9,45 +9,66 @@
 import UIKit
 import SDWebImage
 import RealmSwift
+import SideMenu
 
 protocol MovieNewsProtocol {
     var delegate: MovieNewsDelegate? {get set}
-    func requestMovie()
+    func getMovie(_ category: String)
 }
 
-class MainNewsTableViewController: UITableViewController {
+class MainNewsTableViewController: UITableViewController, SideBarDelegate {
     
     var realmHelper = RealmHelper()
     var provider: MovieNewsProtocol?
     var movieData: [Films] = []
     let defaults = UserDefaults.standard
+    var sideBarMenu: SideMenuNavigationController?
+    var category = "popular?"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if defaults.bool(forKey: "First Launch") == true {
             if let movies = self.realmHelper.readMovie(){
                 self.movieData = movies
             } else {
-                provider?.requestMovie()
+                provider?.getMovie(category)
             }
             defaults.set(true,forKey: "First Laucnh")
         } else {
             provider = NewsProvider(delegate: self)
-            provider?.requestMovie()
+            provider?.getMovie("popular?")
             defaults.set(true,forKey: "First Laucnh")
         }
 //        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
 
+        let sideBarController = SideBarMenuController()
+        sideBarController.delegate = self
+        sideBarMenu = SideMenuNavigationController(rootViewController: sideBarController)
+        sideBarMenu?.leftSide = true
+        
+        SideMenuManager.default.leftMenuNavigationController = sideBarMenu
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.view, forMenu: SideMenuManager.PresentDirection.left)
+        
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        tableView.addSubview(self.refreshControl!) // not required when using UITableViewCo
+        tableView.addSubview(self.refreshControl!)
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        provider?.requestMovie()
+        provider?.getMovie(category)
     }
-
+    
+    //sidebar functions
+    func reload(category: String, navigationBarTitle: String) {
+        title = navigationBarTitle
+        self.category = category
+        provider?.getMovie(category)
+    }
+        
+    func runSegue(identifier: String) {
+        performSegue(withIdentifier: identifier, sender: self)
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -78,20 +99,24 @@ class MainNewsTableViewController: UITableViewController {
     }
     
     func moreData() {
-        for _ in 0...1{
+        for _ in 0...9{
             movieData.append(movieData.randomElement()!)
         }
         tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "goToDetail") {
+        if segue.identifier == "goToDetail" {
             let cell = sender as? MovieTableViewCell
             let indexPath = tableView.indexPath(for: cell!)
             let movie = movieData[indexPath!.row]
             let destination = segue.destination as? MovieDetailViewController
             destination?.movie = movie
         }
+    }
+    
+    @IBAction func sideMenuButton(_ sender: Any) {
+        present(sideBarMenu!, animated: true)
     }
 }
 

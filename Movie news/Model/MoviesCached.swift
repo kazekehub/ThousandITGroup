@@ -20,7 +20,6 @@ class MoviesCached: Object {
     dynamic var voteAverage: Double = 0.0
     dynamic var overview = ""
     dynamic var releaseDate = ""
-    dynamic var favorites = false
     
     override class func primaryKey() -> String? {
         return "id"

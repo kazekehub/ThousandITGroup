@@ -60,17 +60,6 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL3-lo-asy">
-                                            <rect key="frame" x="354" y="20" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="JOq-Oc-j7o"/>
-                                                <constraint firstAttribute="width" constant="40" id="vdH-Ok-ICl"/>
-                                            </constraints>
-                                            <state key="normal" image="star with circle"/>
-                                            <connections>
-                                                <action selector="favoriteButtonClick:" destination="Sse-mG-gVQ" eventType="touchUpInside" id="ebf-yz-7tT"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -80,19 +69,16 @@
                                         <constraint firstItem="vxQ-mW-QFE" firstAttribute="leading" secondItem="Ajr-F6-zjh" secondAttribute="leading" constant="20" id="A4Q-xa-tiR"/>
                                         <constraint firstItem="ceW-bt-hXj" firstAttribute="centerX" secondItem="3Mr-r7-Uic" secondAttribute="centerX" id="Cdp-0c-yaF"/>
                                         <constraint firstItem="I97-Y8-7qg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ceW-bt-hXj" secondAttribute="bottom" constant="15" id="GPE-Dn-tb7"/>
-                                        <constraint firstItem="dL3-lo-asy" firstAttribute="trailing" secondItem="Ajr-F6-zjh" secondAttribute="trailingMargin" id="JPx-JD-og0"/>
                                         <constraint firstAttribute="trailing" secondItem="3Mr-r7-Uic" secondAttribute="trailing" constant="10" id="Jko-cu-1L9"/>
                                         <constraint firstAttribute="bottom" secondItem="I97-Y8-7qg" secondAttribute="bottom" constant="15" id="Q9r-ab-Tg3"/>
                                         <constraint firstAttribute="bottom" secondItem="3Mr-r7-Uic" secondAttribute="bottom" constant="10" id="QJt-2H-1lZ"/>
                                         <constraint firstItem="vxQ-mW-QFE" firstAttribute="top" secondItem="Ajr-F6-zjh" secondAttribute="top" constant="20" id="ltR-bq-cED"/>
                                         <constraint firstItem="I97-Y8-7qg" firstAttribute="centerX" secondItem="3Mr-r7-Uic" secondAttribute="centerX" id="m9k-3e-9bF"/>
                                         <constraint firstItem="ceW-bt-hXj" firstAttribute="top" secondItem="Ajr-F6-zjh" secondAttribute="top" constant="120" id="uTM-Yo-W8c"/>
-                                        <constraint firstItem="dL3-lo-asy" firstAttribute="top" secondItem="vxQ-mW-QFE" secondAttribute="top" id="wzp-If-OP4"/>
                                         <constraint firstAttribute="trailing" secondItem="ceW-bt-hXj" secondAttribute="trailing" constant="30" id="xun-SH-O9H"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="favoriteButton" destination="dL3-lo-asy" id="J6E-wn-WoQ"/>
                                     <outlet property="movieImage" destination="3Mr-r7-Uic" id="ENq-pr-UhG"/>
                                     <outlet property="movieRealaseDateLabel" destination="I97-Y8-7qg" id="iPF-Rq-p9g"/>
                                     <outlet property="originalTitleLabel" destination="ceW-bt-hXj" id="PYa-jc-nsA"/>
@@ -109,11 +95,95 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="The Movie Database" id="eo9-8k-95P">
                         <barButtonItem key="backBarButtonItem" title=" " id="mhZ-av-NUM"/>
+                        <barButtonItem key="leftBarButtonItem" title=" " image="menuButton" id="0uk-n7-9zF">
+                            <connections>
+                                <action selector="sideMenuButton:" destination="ehx-xd-4qX" id="kQv-f7-yTd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="0cz-rn-iiJ" kind="show" identifier="aboutSegue" id="aCh-Bs-JlL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IT9-Yb-Fsw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-262.31884057971018" y="-156.02678571428569"/>
+        </scene>
+        <!-- О приложении-->
+        <scene sceneID="6kt-Y6-1uP">
+            <objects>
+                <viewController id="0cz-rn-iiJ" customClass="AboutViewController" customModule="Movie_news" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cXd-Z1-V1o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkc-Rx-3N6">
+                                <rect key="frame" x="16" y="108" width="382" height="79.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="79.5" id="lVJ-jJ-VY6"/>
+                                </constraints>
+                                <string key="text">Приложение было сделано в качестве задании для компании Thousand IT Group . 
+Все данные пренадлежать The Movie Database (TMDb).</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC2-zN-bCI">
+                                <rect key="frame" x="16" y="207.5" width="382" height="40"/>
+                                <string key="text">Выполнял заданиe 
+Жаппаркулов Казыбек</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBI-b1-qsF">
+                                <rect key="frame" x="16" y="257.5" width="167" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="  Написать на почту  ">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="wirteToEmail:" destination="0cz-rn-iiJ" eventType="touchUpInside" id="soC-tr-7l8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLh-Kg-Kc9">
+                                <rect key="frame" x="16" y="299.5" width="93" height="32"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="  LinkendIn  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="LinkedInButton:" destination="0cz-rn-iiJ" eventType="touchUpInside" id="3pj-FU-BVP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38431372549019605" green="0.38431370259999997" blue="0.38431364299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Fnj-eo-caZ" firstAttribute="trailing" secondItem="Dkc-Rx-3N6" secondAttribute="trailing" constant="16" id="9Kh-ug-6Ft"/>
+                            <constraint firstItem="MC2-zN-bCI" firstAttribute="top" secondItem="Dkc-Rx-3N6" secondAttribute="bottom" constant="20" id="Mz9-tg-wnB"/>
+                            <constraint firstItem="Dkc-Rx-3N6" firstAttribute="leading" secondItem="Fnj-eo-caZ" secondAttribute="leading" constant="16" id="NLS-M2-u6D"/>
+                            <constraint firstItem="xLh-Kg-Kc9" firstAttribute="leading" secondItem="Fnj-eo-caZ" secondAttribute="leading" constant="16" id="SRR-Y4-Ea9"/>
+                            <constraint firstItem="MC2-zN-bCI" firstAttribute="leading" secondItem="Fnj-eo-caZ" secondAttribute="leading" constant="16" id="U3w-yy-f1g"/>
+                            <constraint firstItem="UBI-b1-qsF" firstAttribute="leading" secondItem="Fnj-eo-caZ" secondAttribute="leading" constant="16" id="VuA-ET-6Sv"/>
+                            <constraint firstItem="Fnj-eo-caZ" firstAttribute="trailing" secondItem="MC2-zN-bCI" secondAttribute="trailing" constant="16" id="Zly-4u-0J3"/>
+                            <constraint firstItem="UBI-b1-qsF" firstAttribute="top" secondItem="MC2-zN-bCI" secondAttribute="bottom" constant="10" id="aLg-hL-pJc"/>
+                            <constraint firstItem="xLh-Kg-Kc9" firstAttribute="top" secondItem="UBI-b1-qsF" secondAttribute="bottom" constant="10" id="bbp-Vh-fcM"/>
+                            <constraint firstItem="Dkc-Rx-3N6" firstAttribute="top" secondItem="Fnj-eo-caZ" secondAttribute="top" constant="20" id="ebE-w7-F80"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fnj-eo-caZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title=" О приложении" id="cHz-cb-bVX"/>
+                    <connections>
+                        <outlet property="LinkendInButton" destination="xLh-Kg-Kc9" id="IDr-Cu-iEv"/>
+                        <outlet property="writeToEmail" destination="UBI-b1-qsF" id="6rD-Da-K3E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Es0-WM-oOp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476.81159420289856" y="561.83035714285711"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="LJv-oT-ABK">
@@ -163,17 +233,6 @@
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNp-B6-dJd">
-                                                <rect key="frame" x="354" y="20" width="40" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="8RZ-ug-EAr"/>
-                                                    <constraint firstAttribute="width" constant="40" id="W5D-2P-lYI"/>
-                                                </constraints>
-                                                <state key="normal" image="star with circle"/>
-                                                <connections>
-                                                    <action selector="favoriteStarButtonClick:" destination="Xw6-Ff-rrN" eventType="touchUpInside" id="1Fw-Fz-syr"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loT-gq-U9z">
                                                 <rect key="frame" x="16" y="280" width="382" height="25"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -225,14 +284,11 @@
                                             <constraint firstAttribute="trailing" secondItem="ore-WB-Ha9" secondAttribute="trailing" id="grh-ri-7Zn"/>
                                             <constraint firstItem="bsW-pP-hVY" firstAttribute="leading" secondItem="eah-hj-rkO" secondAttribute="trailing" constant="10" id="hSg-Qw-CxR"/>
                                             <constraint firstAttribute="trailing" secondItem="loT-gq-U9z" secondAttribute="trailing" constant="16" id="nya-40-0lK"/>
-                                            <constraint firstItem="SNp-B6-dJd" firstAttribute="top" secondItem="djT-0j-G9y" secondAttribute="top" id="ocB-gj-GMm"/>
                                             <constraint firstItem="eah-hj-rkO" firstAttribute="leading" secondItem="loT-gq-U9z" secondAttribute="leading" id="qAI-YS-JI5"/>
                                             <constraint firstAttribute="trailing" secondItem="ONe-pu-pQM" secondAttribute="trailing" constant="16" id="raq-Yo-Uf9"/>
                                             <constraint firstItem="djT-0j-G9y" firstAttribute="leading" secondItem="5oa-O8-7fJ" secondAttribute="leading" constant="20" id="ski-Q7-gY6"/>
                                             <constraint firstItem="loT-gq-U9z" firstAttribute="top" secondItem="ore-WB-Ha9" secondAttribute="bottom" constant="20" id="w8A-gk-mJe"/>
                                             <constraint firstItem="loT-gq-U9z" firstAttribute="leading" secondItem="5oa-O8-7fJ" secondAttribute="leading" constant="16" id="wOR-Hb-3lG"/>
-                                            <constraint firstAttribute="trailing" secondItem="SNp-B6-dJd" secondAttribute="trailing" constant="20" id="ygi-5e-Vzy"/>
-                                            <constraint firstItem="SNp-B6-dJd" firstAttribute="top" secondItem="5oa-O8-7fJ" secondAttribute="top" constant="20" id="zqV-Za-2jA"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -257,7 +313,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="JyU-uE-qej"/>
                     <connections>
-                        <outlet property="favoriteStarButton" destination="SNp-B6-dJd" id="RMP-FL-Nbe"/>
                         <outlet property="filmTitleLabel" destination="loT-gq-U9z" id="0UP-qX-BZO"/>
                         <outlet property="movieBackgroundImage" destination="ore-WB-Ha9" id="yvI-5w-GuW"/>
                         <outlet property="movieRealaseDateLabel" destination="i23-iK-KsL" id="Qjw-RC-s5d"/>
@@ -294,6 +349,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star with circle" width="100" height="100"/>
+        <image name="menuButton" width="30" height="30"/>
     </resources>
 </document>

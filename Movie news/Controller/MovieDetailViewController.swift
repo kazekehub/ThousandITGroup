@@ -17,7 +17,6 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var movieRealaseDateLabel: UILabel!
     @IBOutlet weak var filmTitleLabel: UILabel!
-    @IBOutlet weak var favoriteStarButton: UIButton!
     @IBOutlet weak var movieBackgroundImage: UIImageView!
     @IBOutlet weak var voteCountLabel: UILabel!
     
@@ -35,8 +34,5 @@ class MovieDetailViewController: UIViewController {
         movieRealaseDateLabel.text = movie?.releaseDate
         filmTitleLabel.text = movie?.title
         voteCountLabel.text = "\(movie?.voteCount ?? 0)"
-    }
-    
-    @IBAction func favoriteStarButtonClick(_ sender: Any) {
     }
 }

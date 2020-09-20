@@ -23,7 +23,7 @@ class RealmHelper {
         return nil
     }
     
-    func saveAndUpdateMovie(movies: [Films]) {
+    func saveAndUpdateMovie(movies: [Films]){ 
         let realm = try! Realm()
         do {
             try realm.write {

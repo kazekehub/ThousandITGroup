@@ -15,7 +15,6 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var rateView: UIView!
     @IBOutlet weak var rateLabel: UILabel!
-    @IBOutlet weak var favoriteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +22,5 @@ class MovieTableViewCell: UITableViewCell {
         movieImage.layer.masksToBounds = false
         movieImage.clipsToBounds = true
         movieImage.layer.cornerRadius = 20
-    }
-
-    @IBAction func favoriteButtonClick(_ sender: Any) {
     }
 }

@@ -22,6 +22,9 @@
 		7CE4E48925161EAD00B32938 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE4E48825161EAD00B32938 /* SDWebImage */; };
 		7CE4E48B25162BCB00B32938 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE4E48A25162BCA00B32938 /* MovieDetailViewController.swift */; };
 		7CE4E48D2517653D00B32938 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE4E48C2517653D00B32938 /* RealmHelper.swift */; };
+		7CE4E48F25177C0700B32938 /* SideBarMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE4E48E25177C0600B32938 /* SideBarMenuController.swift */; };
+		7CE4E49225177D2100B32938 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE4E49125177D2100B32938 /* SideMenu */; };
+		7CE4E4942517811000B32938 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE4E4932517811000B32938 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,8 @@
 		7CE4E4852516100C00B32938 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		7CE4E48A25162BCA00B32938 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		7CE4E48C2517653D00B32938 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		7CE4E48E25177C0600B32938 /* SideBarMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuController.swift; sourceTree = "<group>"; };
+		7CE4E4932517811000B32938 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			files = (
 				7CE4E48925161EAD00B32938 /* SDWebImage in Frameworks */,
 				7CE4E484251607E300B32938 /* Alamofire in Frameworks */,
+				7CE4E49225177D2100B32938 /* SideMenu in Frameworks */,
 				098A148D548A490C7BC9C97C /* Pods_Movie_news.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,7 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				7C4593682514681F00200867 /* MainNewsTableViewController.swift */,
+				7CE4E48E25177C0600B32938 /* SideBarMenuController.swift */,
 				7CE4E48A25162BCA00B32938 /* MovieDetailViewController.swift */,
+				7CE4E4932517811000B32938 /* AboutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			packageProductDependencies = (
 				7CE4E483251607E300B32938 /* Alamofire */,
 				7CE4E48825161EAD00B32938 /* SDWebImage */,
+				7CE4E49125177D2100B32938 /* SideMenu */,
 			);
 			productName = "Movie news";
 			productReference = 7C45934E2514632A00200867 /* Movie news.app */;
@@ -190,6 +199,7 @@
 			packageReferences = (
 				7CE4E482251607E300B32938 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				7CE4E48725161EAD00B32938 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				7CE4E49025177D2100B32938 /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 7C45934F2514632A00200867 /* Products */;
 			projectDirPath = "";
@@ -262,9 +272,11 @@
 			files = (
 				7C45936B251481DA00200867 /* NewsProvider.swift in Sources */,
 				7C45936D2514A3B700200867 /* Movies.swift in Sources */,
+				7CE4E4942517811000B32938 /* AboutViewController.swift in Sources */,
 				7C45936F2514B63000200867 /* MoviesCached.swift in Sources */,
 				7C4593522514632A00200867 /* AppDelegate.swift in Sources */,
 				7CE4E48D2517653D00B32938 /* RealmHelper.swift in Sources */,
+				7CE4E48F25177C0700B32938 /* SideBarMenuController.swift in Sources */,
 				7CE4E48B25162BCB00B32938 /* MovieDetailViewController.swift in Sources */,
 				7C4593542514632A00200867 /* SceneDelegate.swift in Sources */,
 				7CE4E4862516100C00B32938 /* MovieTableViewCell.swift in Sources */,
@@ -486,6 +498,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		7CE4E49025177D2100B32938 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.4.9;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -498,6 +518,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7CE4E48725161EAD00B32938 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		7CE4E49125177D2100B32938 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CE4E49025177D2100B32938 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
