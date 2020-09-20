@@ -29,4 +29,4 @@ Used pod files:
 Used Swift Package Management: <p>
 1. Alamofire <p>
 2. SideMenu <p>
-3. SDWebImageSVG <p>
+3. SDWebImage <p>
